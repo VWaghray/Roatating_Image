@@ -9,13 +9,14 @@ root.configure(background="black")
 
 
 
-img_open=""
-
+img_path=""
 def Open():
-    global img_open
-    img_open = filedialog.askopenfilename(title = "Select Image File", filetypes= [("Image Files", "*.jpg *.gif *.png *.jpeg")])
-    print(img_open)
-    img=ImageTk.PhotoImage(Image.open (img_open))
+    global img_path
+    img_path=filedialog.askopenfilename(title = "Select Image File", filetypes= [("Image Files", "*.jpg *.gif *.png *.jpeg")])
+    print(img_path)
+    img=ImageTk.PhotoImage(Image.open (img_path))
+    label_image.configure(image=img)
+    label_image.image=img
     
 
 
